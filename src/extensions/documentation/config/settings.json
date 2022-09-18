@@ -1,0 +1,27 @@
+{
+  "info": {
+    "title": "YOUniversity",
+    "description": "Backend application for YOUniversity mobile app using Strapi",
+    "termsOfService": "https://youniversityapp.ga/terms",
+    "contact": {
+      "name": "Support",
+      "url": "https://youniversityapp.ga/support",
+      "email": "support@youniversityapp.ga"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://spdx.org/licenses/MIT.html"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:1337/",
+      "description": "Development server"
+    },
+    {
+      "url": "https://api.youniversityapp.ga/",
+      "description": "Production server"
+    }
+  ]
+}
