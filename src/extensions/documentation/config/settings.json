@@ -20,7 +20,7 @@
       "description": "Development server"
     },
     {
-      "url": "https://api.youniversityapp.ga/",
+      "url": "https://api.youniversityapp.ga/api/",
       "description": "Production server"
     }
   ]
