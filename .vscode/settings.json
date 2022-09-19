@@ -1,5 +1,10 @@
 {
   "npm.exclude": [
     "**/.cache"
-  ]
+  ],
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "yarn.lock, .yarnrc.yml",
+    ".env": ".env.*"
+  }
 }
