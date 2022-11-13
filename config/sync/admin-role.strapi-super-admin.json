@@ -4,6 +4,300 @@
   "description": "Super Admins can access and manage all features and settings.",
   "permissions": [
     {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::contact.contact",
+      "properties": {
+        "fields": [
+          "fullName",
+          "email",
+          "phoneNumber",
+          "photo",
+          "type"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::contact.contact",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::contact.contact",
+      "properties": {
+        "fields": [
+          "fullName",
+          "email",
+          "phoneNumber",
+          "photo",
+          "type"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::contact.contact",
+      "properties": {
+        "fields": [
+          "fullName",
+          "email",
+          "phoneNumber",
+          "photo",
+          "type"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::course.course",
+      "properties": {
+        "fields": [
+          "name",
+          "color",
+          "teacher",
+          "leader",
+          "internalId",
+          "university"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::course.course",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::course.course",
+      "properties": {
+        "fields": [
+          "name",
+          "color",
+          "teacher",
+          "leader",
+          "internalId",
+          "university"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::course.course",
+      "properties": {
+        "fields": [
+          "name",
+          "color",
+          "teacher",
+          "leader",
+          "internalId",
+          "university"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::event.event",
+      "properties": {
+        "fields": [
+          "name",
+          "type",
+          "course",
+          "startDate",
+          "dueDate",
+          "description"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::event.event",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::event.event",
+      "properties": {
+        "fields": [
+          "name",
+          "type",
+          "course",
+          "startDate",
+          "dueDate",
+          "description"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::event.event",
+      "properties": {
+        "fields": [
+          "name",
+          "type",
+          "course",
+          "startDate",
+          "dueDate",
+          "description"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::grade.grade",
+      "properties": {
+        "fields": [
+          "name",
+          "course",
+          "value",
+          "weight"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::grade.grade",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::grade.grade",
+      "properties": {
+        "fields": [
+          "name",
+          "course",
+          "value",
+          "weight"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::grade.grade",
+      "properties": {
+        "fields": [
+          "name",
+          "course",
+          "value",
+          "weight"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::schedule.schedule",
+      "properties": {
+        "fields": [
+          "name",
+          "type",
+          "owner",
+          "items.course",
+          "items.schedule",
+          "items.teacher",
+          "items.weekDay",
+          "items.time"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::schedule.schedule",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::schedule.schedule",
+      "properties": {
+        "fields": [
+          "name",
+          "type",
+          "owner",
+          "items.course",
+          "items.schedule",
+          "items.teacher",
+          "items.weekDay",
+          "items.time"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::schedule.schedule",
+      "properties": {
+        "fields": [
+          "name",
+          "type",
+          "owner",
+          "items.course",
+          "items.schedule",
+          "items.teacher",
+          "items.weekDay",
+          "items.time"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::university.university",
+      "properties": {
+        "fields": [
+          "name",
+          "countryCode",
+          "logo"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::university.university",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::university.university",
+      "properties": {
+        "fields": [
+          "name",
+          "countryCode",
+          "logo"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::university.university",
+      "properties": {
+        "fields": [
+          "name",
+          "countryCode",
+          "logo"
+        ]
+      },
+      "conditions": []
+    },
+    {
       "action": "admin::api-tokens.create",
       "subject": null,
       "properties": {},
@@ -166,7 +460,10 @@
           "confirmationToken",
           "confirmed",
           "blocked",
-          "role"
+          "role",
+          "phoneNumber",
+          "profilePicture",
+          "university"
         ]
       },
       "conditions": []
@@ -190,7 +487,10 @@
           "confirmationToken",
           "confirmed",
           "blocked",
-          "role"
+          "role",
+          "phoneNumber",
+          "profilePicture",
+          "university"
         ]
       },
       "conditions": []
@@ -208,7 +508,10 @@
           "confirmationToken",
           "confirmed",
           "blocked",
-          "role"
+          "role",
+          "phoneNumber",
+          "profilePicture",
+          "university"
         ]
       },
       "conditions": []
@@ -221,6 +524,30 @@
     },
     {
       "action": "plugin::content-type-builder.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::documentation.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::documentation.settings.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::documentation.settings.regenerate",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::documentation.settings.update",
       "subject": null,
       "properties": {},
       "conditions": []

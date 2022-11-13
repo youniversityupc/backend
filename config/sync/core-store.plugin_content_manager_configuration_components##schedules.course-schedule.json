@@ -1,0 +1,139 @@
+{
+  "key": "plugin_content_manager_configuration_components::schedules.course-schedule",
+  "value": {
+    "uid": "schedules.course-schedule",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "id",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "course": {
+        "edit": {
+          "label": "course",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "course",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "schedule": {
+        "edit": {
+          "label": "schedule",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "schedule",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "teacher": {
+        "edit": {
+          "label": "teacher",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "fullName"
+        },
+        "list": {
+          "label": "teacher",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "weekDay": {
+        "edit": {
+          "label": "weekDay",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "weekDay",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "time": {
+        "edit": {
+          "label": "time",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "time",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "course",
+        "schedule",
+        "teacher"
+      ],
+      "edit": [
+        [
+          {
+            "name": "course",
+            "size": 6
+          },
+          {
+            "name": "schedule",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "teacher",
+            "size": 6
+          },
+          {
+            "name": "weekDay",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "time",
+            "size": 4
+          }
+        ]
+      ],
+      "editRelations": []
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}
