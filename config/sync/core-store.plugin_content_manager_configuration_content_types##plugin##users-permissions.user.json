@@ -147,6 +147,49 @@
           "sortable": true
         }
       },
+      "phoneNumber": {
+        "edit": {
+          "label": "phoneNumber",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "phoneNumber",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "profilePicture": {
+        "edit": {
+          "label": "profilePicture",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "profilePicture",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "university": {
+        "edit": {
+          "label": "university",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "university",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -184,7 +227,8 @@
         "confirmed"
       ],
       "editRelations": [
-        "role"
+        "role",
+        "university"
       ],
       "edit": [
         [
@@ -211,6 +255,16 @@
           {
             "name": "blocked",
             "size": 4
+          },
+          {
+            "name": "phoneNumber",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "profilePicture",
+            "size": 6
           }
         ]
       ]
