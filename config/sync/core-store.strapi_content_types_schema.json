@@ -1421,6 +1421,22 @@
           "inversedBy": "users",
           "configurable": false
         },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "media",
+          "multiple": false,
+          "required": false,
+          "allowedTypes": [
+            "images"
+          ]
+        },
+        "university": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::university.university"
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -1462,6 +1478,7 @@
         }
       },
       "kind": "collectionType",
+      "__filename__": "schema.json",
       "__schema__": {
         "collectionName": "up_users",
         "info": {
@@ -1525,6 +1542,22 @@
             "target": "plugin::users-permissions.role",
             "inversedBy": "users",
             "configurable": false
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "profilePicture": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "university": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::university.university"
           }
         },
         "kind": "collectionType"
@@ -1535,6 +1568,658 @@
       "uid": "plugin::users-permissions.user",
       "plugin": "users-permissions",
       "globalId": "UsersPermissionsUser"
+    },
+    "api::contact.contact": {
+      "kind": "collectionType",
+      "collectionName": "contacts",
+      "info": {
+        "singularName": "contact",
+        "pluralName": "contacts",
+        "displayName": "Contact",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "fullName": {
+          "type": "string",
+          "required": true
+        },
+        "email": {
+          "type": "email",
+          "required": false
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "photo": {
+          "type": "media",
+          "multiple": false,
+          "required": false,
+          "allowedTypes": [
+            "images"
+          ]
+        },
+        "type": {
+          "type": "enumeration",
+          "enum": [
+            "teacher",
+            "leader"
+          ],
+          "required": true
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "contacts",
+        "info": {
+          "singularName": "contact",
+          "pluralName": "contacts",
+          "displayName": "Contact",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "fullName": {
+            "type": "string",
+            "required": true
+          },
+          "email": {
+            "type": "email",
+            "required": false
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "photo": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "type": {
+            "type": "enumeration",
+            "enum": [
+              "teacher",
+              "leader"
+            ],
+            "required": true
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "contact",
+      "connection": "default",
+      "uid": "api::contact.contact",
+      "apiName": "contact",
+      "globalId": "Contact",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::course.course": {
+      "kind": "collectionType",
+      "collectionName": "courses",
+      "info": {
+        "singularName": "course",
+        "pluralName": "courses",
+        "displayName": "Course",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "color": {
+          "type": "string",
+          "required": false
+        },
+        "teacher": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::contact.contact"
+        },
+        "leader": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::contact.contact"
+        },
+        "internalId": {
+          "type": "string"
+        },
+        "university": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::university.university"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "courses",
+        "info": {
+          "singularName": "course",
+          "pluralName": "courses",
+          "displayName": "Course",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "color": {
+            "type": "string",
+            "required": false
+          },
+          "teacher": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::contact.contact"
+          },
+          "leader": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::contact.contact"
+          },
+          "internalId": {
+            "type": "string"
+          },
+          "university": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::university.university"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "course",
+      "connection": "default",
+      "uid": "api::course.course",
+      "apiName": "course",
+      "globalId": "Course",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::event.event": {
+      "kind": "collectionType",
+      "collectionName": "events",
+      "info": {
+        "singularName": "event",
+        "pluralName": "events",
+        "displayName": "Event"
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "type": {
+          "type": "string",
+          "required": true
+        },
+        "course": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::course.course"
+        },
+        "startDate": {
+          "type": "datetime",
+          "required": false
+        },
+        "dueDate": {
+          "type": "datetime",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "events",
+        "info": {
+          "singularName": "event",
+          "pluralName": "events",
+          "displayName": "Event"
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "type": {
+            "type": "string",
+            "required": true
+          },
+          "course": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::course.course"
+          },
+          "startDate": {
+            "type": "datetime",
+            "required": false
+          },
+          "dueDate": {
+            "type": "datetime",
+            "required": true
+          },
+          "description": {
+            "type": "text"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "event",
+      "connection": "default",
+      "uid": "api::event.event",
+      "apiName": "event",
+      "globalId": "Event",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::grade.grade": {
+      "kind": "collectionType",
+      "collectionName": "grades",
+      "info": {
+        "singularName": "grade",
+        "pluralName": "grades",
+        "displayName": "Grade"
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "course": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::course.course"
+        },
+        "value": {
+          "type": "decimal",
+          "required": false
+        },
+        "weight": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "grades",
+        "info": {
+          "singularName": "grade",
+          "pluralName": "grades",
+          "displayName": "Grade"
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "course": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::course.course"
+          },
+          "value": {
+            "type": "decimal",
+            "required": false
+          },
+          "weight": {
+            "type": "integer"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "grade",
+      "connection": "default",
+      "uid": "api::grade.grade",
+      "apiName": "grade",
+      "globalId": "Grade",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::schedule.schedule": {
+      "kind": "collectionType",
+      "collectionName": "schedules",
+      "info": {
+        "singularName": "schedule",
+        "pluralName": "schedules",
+        "displayName": "Schedule",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "type": {
+          "type": "enumeration",
+          "enum": [
+            "A",
+            "B"
+          ]
+        },
+        "owner": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "plugin::users-permissions.user"
+        },
+        "items": {
+          "type": "component",
+          "repeatable": true,
+          "component": "schedules.course-schedule"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "schedules",
+        "info": {
+          "singularName": "schedule",
+          "pluralName": "schedules",
+          "displayName": "Schedule",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "type": {
+            "type": "enumeration",
+            "enum": [
+              "A",
+              "B"
+            ]
+          },
+          "owner": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "plugin::users-permissions.user"
+          },
+          "items": {
+            "type": "component",
+            "repeatable": true,
+            "component": "schedules.course-schedule"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "schedule",
+      "connection": "default",
+      "uid": "api::schedule.schedule",
+      "apiName": "schedule",
+      "globalId": "Schedule",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::university.university": {
+      "kind": "collectionType",
+      "collectionName": "universities",
+      "info": {
+        "singularName": "university",
+        "pluralName": "universities",
+        "displayName": "University",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "countryCode": {
+          "type": "string",
+          "required": true
+        },
+        "logo": {
+          "type": "media",
+          "multiple": false,
+          "required": false,
+          "allowedTypes": [
+            "images"
+          ]
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "universities",
+        "info": {
+          "singularName": "university",
+          "pluralName": "universities",
+          "displayName": "University",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "countryCode": {
+            "type": "string",
+            "required": true
+          },
+          "logo": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+              "images"
+            ]
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "university",
+      "connection": "default",
+      "uid": "api::university.university",
+      "apiName": "university",
+      "globalId": "University",
+      "actions": {},
+      "lifecycles": {}
     }
   },
   "type": "object",
